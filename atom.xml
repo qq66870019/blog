@@ -1,13 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://gowo.gitee.io</id>
+    <id>https://qq66870019.ml/blog</id>
     <title>VanllaOcap Blog - My life,my dear.</title>
-    <updated>2021-03-27T02:23:40.576Z</updated>
+    <updated>2021-03-27T02:56:33.230Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="http://gowo.gitee.io"/>
-    <link rel="self" href="http://gowo.gitee.io/atom.xml"/>
+    <link rel="alternate" href="https://qq66870019.ml/blog"/>
+    <link rel="self" href="https://qq66870019.ml/blog/atom.xml"/>
     <subtitle>温故而知新</subtitle>
-    <logo>http://gowo.gitee.io/images/avatar.png</logo>
-    <icon>http://gowo.gitee.io/favicon.ico</icon>
+    <logo>https://qq66870019.ml/blog/images/avatar.png</logo>
+    <icon>https://qq66870019.ml/blog/favicon.ico</icon>
     <rights>All rights reserved 2021, VanllaOcap Blog - My life,my dear.</rights>
+    <entry>
+        <title type="html"><![CDATA[使用Github/Gitee+Hexo轻松建立静态博客]]></title>
+        <id>https://qq66870019.ml/blog/post/shi-yong-githubgiteehexo-qing-song-jian-li-jing-tai-bo-ke/</id>
+        <link href="https://qq66870019.ml/blog/post/shi-yong-githubgiteehexo-qing-song-jian-li-jing-tai-bo-ke/">
+        </link>
+        <updated>2021-03-27T02:52:54.000Z</updated>
+        <content type="html"><![CDATA[<p>前言</p>
+<p>Hexo是一个快速，简单，功能强大的开源博客框架。<br>
+GitHub/Gitee Pages 是一个国内外静态资源网站。<br>
+两者结合可以搭建用户自己的静态网站。<br>
+搭建hexo<br>
+安装node.js</p>
+<p>根据操作系统，在官网下载对应的安装包，地址为:node.js。<br>
+下载之后，安装即可。<br>
+安装git</p>
+<p>根据操作系统，在官网下载对应的安装包，地址为:git。<br>
+下载之后，安装即可，具体安装过程此处不作详细介绍。<br>
+安装hexo</p>
+<p>npm install hexo-cli -g</p>
+<pre><code>1
+</code></pre>
+<p>初始化hexo</p>
+<p>选择需要安装的项目目录，执行以下命令：</p>
+<p>hexo init [项目名称，如hexo]</p>
+<pre><code>1
+</code></pre>
+<p>执行完成后，目录截图如下：</p>
+<p>至此，hexo的本地安装已完成。<br>
+搭建github/gitee(码云) pages<br>
+前言</p>
+<p>由于本人需要将Hexo博客同时部署到 Github 和 gitee上 ，所以这里介绍怎么同时部署到这两个网站的pages。<br>
+之所以选择这两个网站，是因为国外用户可以访问 Github，而国内用户可以访问 gitee上。优化访问速度。<br>
+修改配置文件</p>
+<p>在站点根目录下找到_config.yml文件，将里边的deploy节点修改成下边的形式，其中repository等于username ，即</p>
+<p>deploy:<br>
+type: git<br>
+repo:<br>
+github: git@github.com:[username]/[username].github.io.git,master<br>
+gitee: git@gitee.com:[username]/[username].git,master</p>
+<pre><code>1
+2
+3
+4
+5
+</code></pre>
+<p>将上边的仓库url的{username}/{repository}改成自己的项目地址，这里使用的是SSH协议的Git仓库地址，即：</p>
+<p>git@{domain}:{username}/{username}.git</p>
+<pre><code>1
+</code></pre>
+<p>推荐使用SSH协议的地址，免去每次pull/push输入账号密码的繁琐，也确保安全。<br>
+在 Github 和 Gitee 上各自创建一个仓库</p>
+<p>如果我们只是将项目部署到某一个代码托管站点而已，那么该项目仓库的名字可以随便起。<br>
+但是现在我们需要将项目同时部署到 Github 和 Gitee 上，那就不能随意命名了。<br>
+我们需要采用特定的命名方式，才能正确将Hexo博客同时部署到这两个站点上；否则很可能会导致只有博客的主页能访问到，而其他的路径全部失效。<br>
+仓库的命名</p>
+<p>对于 Gitee，你可以选择建立一个私人仓库来部署自己的Hexo博客，不过和 Github 不同的地方在于：<br>
+Github 的仓库名要命名： {username}.github.io<br>
+而 Coding.net 的仓库名要命名为：{username}<br>
+Gitee的原理与Coding相同，过去的username.gitee.io需要重新部署仓库名为username<br>
+这里的 username 指的是你在这两个网站上的用户名，只有以这种命名形式的仓库，才能够不通过子域名的形式来访问我们的博客。</p>
+<pre><code>1
+2
+</code></pre>
+<p>如果将仓库名命名为其他的形式，比如：hexo-blog，那么要访问该博客，就需要输入下边的url：</p>
+<p>https://jack.github.io/hexo-blog<br>
+https://jack.coding.me/hexo-blog</p>
+<pre><code>1
+2
+</code></pre>
+<p>这里的仓库名hexo-blog就变成了子域名，于是问题就来了，对于存在子域名的Hexo博客，需要在站点配置文件里配置url节点：</p>
+<h1 id="url">URL</h1>
+<h2 id="if-your-site-is-put-in-a-subdirectory-set-url-as-httpyoursitecomchild-and-root-as-child">If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'</h2>
+<p>url: http://yoursite.com<br>
+root: /<br>
+permalink: :year/:month/:day/:title/<br>
+permalink_defaults:</p>
+<pre><code>1
+2
+3
+4
+5
+6
+</code></pre>
+<p>如果不配置这里的url节点，会导致除了首页以外的所有页面都请求404；<br>
+但是我们由于是同时部署在两个网站上，其父域名是不一样的，那么这里的url节点也就只能配置一个而牺牲另一个了；<br>
+但是如果你有自己的域名，就可以解决这个问题了：直接在这里配置自己的域名就行了。<br>
+配置 SSH key</p>
+<p>如果在Linux/Mac环境下，可以直接在terminal中执行key生成命令，Windows需要打开git bash，具体方法为鼠标右键-&gt;选择Git Bash。<br>
+创建RSA密钥对</p>
+<p>执行以下命令：<br>
+ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;<br>
+看到提示就按一次回车，在连续三次回车后，就表示创建成功了。<br>
+接着将~/.ssh目录下将里边的id_rsa.pub文件里的内容复制到剪切板。<br>
+Github 配置 SSH key</p>
+<p>登陆 Github 的账号：<br>
+进入 Settings 页面<br>
+选择 SSH and GPG keys<br>
+点击 New SSH key<br>
+填写 Title（用来给公钥起一个名字，以便和其他的公钥区分开来）<br>
+然后在 Key 里将我们刚刚复制的公钥粘贴进去<br>
+最后点击 Add SSH key，这时候 GitHub 会要你输入账号密码进行确认。<br>
+Gitee 配置 SSH key</p>
+<p>登陆Gitee的账号：<br>
+点击用户头像-&gt;进入个人设置<br>
+选择安全设置-&gt;SSH公钥<br>
+选择新增公钥<br>
+填写标题：公钥标题key<br>
+填写公钥：把我们刚刚复制的公钥粘贴到这里<br>
+添加后输入输入账号密码进行确认<br>
+验证 SSH 连接</p>
+<p>使用Git Bash输入：<br>
+ssh -T git@github.com<br>
+第一次连接时会问你是否继续连接，输入 yes 即可；<br>
+接下来验证Gitee的ssh连接：<br>
+ssh -T git@gitee.com<br>
+同样输入 yes 即可。<br>
+至此，则github/gitee page搭建完成。<br>
+本地运行<br>
+启动服务</p>
+<p>在项目根目录执行：hexo s<br>
+执行成功，则显示如下：</p>
+<p>打开http://localhost:4000 即可在本地访问。<br>
+部署服务<br>
+安装插件</p>
+<p>$ npm install hexo-deployer-git --save</p>
+<pre><code>1
+</code></pre>
+<p>推送服务器</p>
+<p>$ hexo deploy</p>
+<pre><code>1
+</code></pre>
+<p>访问：</p>
+<p>gitee的访问：https://[gitee的用户名].gitee.io<br>
+github的访问：https://[github的用户名].github.io</p>
+]]></content>
+    </entry>
 </feed>

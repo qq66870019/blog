@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://qq66870019.ml/blog</id>
+    <id>http://gowo.gitee.io</id>
     <title>VanllaOcap Blog - My life,my dear.</title>
-    <updated>2021-03-25T10:57:02.984Z</updated>
+    <updated>2021-03-27T02:23:40.576Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://qq66870019.ml/blog"/>
-    <link rel="self" href="https://qq66870019.ml/blog/atom.xml"/>
+    <link rel="alternate" href="http://gowo.gitee.io"/>
+    <link rel="self" href="http://gowo.gitee.io/atom.xml"/>
     <subtitle>温故而知新</subtitle>
-    <logo>https://qq66870019.ml/blog/images/avatar.png</logo>
-    <icon>https://qq66870019.ml/blog/favicon.ico</icon>
+    <logo>http://gowo.gitee.io/images/avatar.png</logo>
+    <icon>http://gowo.gitee.io/favicon.ico</icon>
     <rights>All rights reserved 2021, VanllaOcap Blog - My life,my dear.</rights>
 </feed>

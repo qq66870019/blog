@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://qq66870019.ml/blog</id>
+    <id>http://blog.fourc.xyz</id>
     <title>VanllaOcap Blog - My life,my dear.</title>
-    <updated>2021-03-27T03:50:33.107Z</updated>
+    <updated>2021-04-28T11:46:16.805Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://qq66870019.ml/blog"/>
-    <link rel="self" href="https://qq66870019.ml/blog/atom.xml"/>
+    <link rel="alternate" href="http://blog.fourc.xyz"/>
+    <link rel="self" href="http://blog.fourc.xyz/atom.xml"/>
     <subtitle>温故而知新</subtitle>
-    <logo>https://qq66870019.ml/blog/images/avatar.png</logo>
-    <icon>https://qq66870019.ml/blog/favicon.ico</icon>
+    <logo>http://blog.fourc.xyz/images/avatar.png</logo>
+    <icon>http://blog.fourc.xyz/favicon.ico</icon>
     <rights>All rights reserved 2021, VanllaOcap Blog - My life,my dear.</rights>
     <entry>
         <title type="html"><![CDATA[使用Github/Gitee+Hexo轻松建立静态博客]]></title>
-        <id>https://qq66870019.ml/blog/post/shi-yong-githubgiteehexo-qing-song-jian-li-jing-tai-bo-ke/</id>
-        <link href="https://qq66870019.ml/blog/post/shi-yong-githubgiteehexo-qing-song-jian-li-jing-tai-bo-ke/">
+        <id>http://blog.fourc.xyz/post/shi-yong-githubgiteehexo-qing-song-jian-li-jing-tai-bo-ke/</id>
+        <link href="http://blog.fourc.xyz/post/shi-yong-githubgiteehexo-qing-song-jian-li-jing-tai-bo-ke/">
         </link>
         <updated>2021-03-27T02:52:54.000Z</updated>
         <content type="html"><![CDATA[<p>前言</p>
